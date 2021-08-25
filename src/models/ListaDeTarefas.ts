@@ -39,7 +39,8 @@ export class ListaDeTarefas{
     }
     
     removerTarefa(t:Tarefa){
-        this.tarefas.splice(this.tarefas.indexOf(t),1);        
+        this.tarefas.splice(this.tarefas.indexOf(t),1);
+        window.localStorage.setItem("todolist", JSON.stringify(this.tarefas));        
         document.getElementById(t.id).remove();
     }
     
